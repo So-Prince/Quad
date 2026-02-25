@@ -1,0 +1,61 @@
+package piscine
+
+import "github.com/01-edu/z01"
+
+func QuadD(x, y int) {
+
+	if x <= 0 || y <= 0 {
+
+		return
+
+	}
+
+	for row := 0; row < y; row++ {
+
+		for col := 0; col < x; col++ {
+
+			if row == 0 && col == 0 {
+
+				// Top-left corner
+
+				z01.PrintRune('A')
+
+			} else if row == 0 && col == x-1 {
+
+				// Top-right corner
+
+				z01.PrintRune('C')
+
+			} else if row == y-1 && col == 0 {
+
+				// Bottom-left corner
+
+				z01.PrintRune('A')
+
+			} else if row == y-1 && col == x-1 {
+
+				// Bottom-right corner
+
+				z01.PrintRune('C')
+
+			} else if row == 0 || row == y-1 || col == 0 || col == x-1 {
+
+				// Edges
+
+				z01.PrintRune('B')
+
+			} else {
+
+				// Interior
+
+				z01.PrintRune(' ')
+
+			}
+
+		}
+
+		z01.PrintRune('\n')
+
+	}
+
+}
